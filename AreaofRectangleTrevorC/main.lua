@@ -1,0 +1,5 @@
+-- Title: AreaOfRectangleAndCircle
+-- Name: Your Name
+-- Course: ICS2O/3C
+-- This program...displays a colored rectangle with a different colored border. it also calculate the rectangles area. I also coded to make a circle with a given radius that is colored with a different colored border. I used the radius to calculate the area on the ipad.-----------------------------------------------------------------------------------------
+--
