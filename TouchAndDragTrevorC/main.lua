@@ -49,6 +49,7 @@ local function Bananalistener (touch)
 	if (touch.phase == "ended") then 
 		alreadyTouchedBanana = false
 		alreadyTouchedMario = false
+		alreadyTouchedChicken = false
 	end
 end
 
@@ -70,6 +71,7 @@ local function Mariolistener (touch)
 	if (touch.phase == "ended") then
 		alreadyTouchedMario = false
 		alreadyTouchedBanana = false
+		alreadyTouchedChicken = false
 	end
 end
 
@@ -83,4 +85,16 @@ local function Chickenlistener (touch)
 		end
 	end
 
-	if ( () )
+	if ( (touch.phase =="moved") and (alreadyTouchedChicken == true) ) then
+		chicken.x = touch.x
+		chicken.y = touch.y
+	end
+
+	if (touch.phase == "ended") then
+		alreadyTouchedChicken = false
+		alreadyTouchedMario = false
+		alreadyTouchedBanana = false
+	end
+end
+
+chicken:addEventListener("touch", Chickenlistener)
