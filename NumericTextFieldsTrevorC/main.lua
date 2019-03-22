@@ -18,7 +18,10 @@ local correctAnswer
 local incorrectAnswer
 local randomOperator
 
-local 
+local correctSound = audio.loadSound( "Sounds/ea.mp3" )
+local correctSoundChanel
+local incorrectSound = audio.loadSound( "Sounds/sadTrumpet.mp3")
+local incorrectSoundChanel
 
 local function AskQuestion()
 
@@ -32,8 +35,13 @@ local function AskQuestion()
 		correctAnswer = randomNumber1 + randomNumber2
 
 		questiobObject.text = randomNumber1 .. " + " .. randomNumber2 .. " = "
+
+	elseif (randomOperator == 2) then
+
+		correctAnswer = randomNumber1 - randomNumber2
+
+		questiobObject.text = randomNumber1 .. " - " .. randomNumber2 .. " = "
 	end
-	
 end 
 
 local function HideCorrect()
@@ -51,20 +59,24 @@ local function NumericFeildListener( event )
 	if ( event.phase == "began" ) then
 
 		event.target.text = ""
-
 	elseif event.phase == "submitted" then
 
 		userAnswer = tonumber(event.target.text)
 
 		if (userAnswer == correctAnswer) then
 			correctObject.isVisible = true
+			correctSoundChanel = audio.play(correctSound)
 			timer.performWithDelay(3000, HideCorrect)
-		elseif
+		else
 			incorrectObject.isVisible = true
-				timer.performWithDelay(3000, HideIncorrect)
+			incorrectSoundChanel = audio.play(incorrectSound)
+			timer.performWithDelay(3000, HideIncorrect)
 		end
+
 		event.target.text = ""
+
 	end
+
 end
 
 

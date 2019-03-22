@@ -19,9 +19,6 @@ local correctAnswer
 local incorrectAnswer
 local randomOperator
 
-local correctSound = audio.loadSound( "Sounds/ea.mp3" )
-local correctSoundChanel
-
 local function AskQuestion()
 
 	randomOperator = math.random(1,4)

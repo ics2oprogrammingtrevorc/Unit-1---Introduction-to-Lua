@@ -3,6 +3,7 @@
 -- Course: ICS2O/3C
 -- This program...Does something when i click on the button
 
+local sound = audio.loadSound 
 display.setDefault ("background", 0, 0.3, 0.9)
 
 display.setStatusBar(display.HiddenStatusBar)
