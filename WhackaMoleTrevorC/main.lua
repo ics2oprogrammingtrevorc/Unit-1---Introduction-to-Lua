@@ -14,3 +14,5 @@ bkg.anchorX = 0
 bkg.anchorY = 0
 bkg.x = 0
 bkg.y = 0
+
+local mole = display.newImage( "Images/mole.png", 0, 0)
