@@ -3,7 +3,9 @@
 -- Course: ICS2O/3C
 -- This program...Does something when i click on the button
 
-local sound = audio.loadSound 
+local sound = audio.loadSound( "sounds/fatality.mp3" )
+local soundChanel
+
 display.setDefault ("background", 0, 0.3, 0.9)
 
 display.setStatusBar(display.HiddenStatusBar)
@@ -47,6 +49,7 @@ end
 
 local function RedButtonListener(touch)
 	if (touch.phase == "began") then
+		soundChanel = audio.play(sound)
 		blueButton.isVisible = false
 		redButton.isVisible = true
 		textObject.isVisible = true
